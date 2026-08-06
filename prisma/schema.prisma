@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model License {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  hwid      String?  // Hardware ID of the user (null if unused)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isBanned  Boolean  @default(false)
+}
