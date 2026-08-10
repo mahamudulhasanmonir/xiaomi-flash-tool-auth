@@ -207,7 +207,7 @@ export default function AdminPage() {
                         <span className="inline-block px-2 py-1 rounded bg-green-500/20 text-green-400 text-xs font-bold">ACTIVE</span>
                       )}
                     </td>
-                    <td className="px-6 py-4 text-gray-400 font-mono text-xs">
+                    <td className="px-6 py-4 text-gray-400 font-mono text-xs max-w-[150px] sm:max-w-[250px] md:max-w-[300px] truncate" title={license.hwid || 'Unclaimed'}>
                       {license.hwid ? license.hwid : <span className="italic text-gray-600">Unclaimed</span>}
                     </td>
                     <td className="px-6 py-4 text-gray-400">
