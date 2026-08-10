@@ -23,8 +23,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true, license });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Generate error:', error);
-    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ success: false, error: error.message || String(error) }, { status: 500 });
   }
 }
